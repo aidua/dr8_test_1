@@ -1,9 +1,20 @@
 
-
-
+.maincontainer {
+    background-color: #c1d4df;
+}
+.currencytbl .row.odd {
+    background-color: #e0eaef;
+}
+.currencytbl .row.even {
+    background-color: #c4e3f3;
+}
+.currencytbl .row > div {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
 .left-sidebar {
-    background: #ffff66;
+    background-color: #e0eaef;
 }
 .content {
-    background: #0c97ed;
+
 }

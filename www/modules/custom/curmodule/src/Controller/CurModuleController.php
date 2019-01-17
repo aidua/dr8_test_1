@@ -12,7 +12,7 @@
 /**
  * Простір імен нашого контролера. Подібне на опис вище, але НЕ вказується назва нашого класу.
  */
-namespace Drupal\hellomodule\Controller;
+namespace Drupal\curmodule\Controller;
 
 /**
  * Використовуємо клас з друпалу: ControllerBase. Наслідуємось від нього і він зробить за нас
@@ -23,7 +23,7 @@ use Drupal\Core\Controller\ControllerBase;
 /**
  * Оголошуємо наш клас-контроллер.
  */
-class HelloModuleController extends ControllerBase {
+class CurModuleController extends ControllerBase {
 
     /**
      * {@inheritdoc}
@@ -39,5 +39,11 @@ class HelloModuleController extends ControllerBase {
         return $output;
     }
 
+    public function content() {
+        return [
+            '#theme' => 'curmodule_template',
+            '#test_var' => $this->t('Test Value from function CONTENT'),
+        ];
+    }
 }
 

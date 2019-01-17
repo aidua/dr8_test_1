@@ -12,7 +12,7 @@
 /**
  * Простір імен нашого контролера. Подібне на опис вище, але НЕ вказується назва нашого класу.
  */
-namespace Drupal\hellomodule\Controller;
+namespace Drupal\nbumodule\Controller;
 
 /**
  * Використовуємо клас з друпалу: ControllerBase. Наслідуємось від нього і він зробить за нас
@@ -23,19 +23,18 @@ use Drupal\Core\Controller\ControllerBase;
 /**
  * Оголошуємо наш клас-контроллер.
  */
-class HelloModuleController extends ControllerBase {
+class NbuModuleController extends ControllerBase {
 
-    /**
-     * {@inheritdoc}
-     * В Drupal 8 дуже багато будується на renderable arrays и при поверненні даною функцією
-     * вмісту сторінки, ми також повинні вернути масив, який спокійно пройде через drupal_render().
-     */
-    public function helloModule() {
+    public function nbuModule() {
         $output = array();
         $output['#title'] = 'HelloModule page title';
         $output['#markup'] = 'Hello World Module!';
-        $output['#theme'] = 'hellomodule_template';
+        $output['#theme'] = 'nbumodule_template';
         $output['#test_var'] = 'Test Value from function CONTENT';
+
+
+
+
         return $output;
     }
 

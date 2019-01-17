@@ -1,0 +1,6 @@
+curmodule.link:
+  title: 'Валюти'
+  description: 'Курс валют'
+  menu_name: main
+  route_name: curmodule.routing
+  weight: 100

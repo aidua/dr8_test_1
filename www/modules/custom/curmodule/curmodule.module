@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function curmodule_theme() {
+    return [
+        'curmodule_template' => [  // Назва теми
+            'variables' => [ // Масив назви змінних
+                'data' => NULL,
+            ],
+            'template' => 'curmodule_template', // Шлях до шаблону без .html.twig, в якому і будуть доступні змінні, що вказані вище
+        ],
+    ];
+}

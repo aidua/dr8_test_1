@@ -1,0 +1,6 @@
+curmodule.link:
+  title: 'Курси НБУ'
+  description: 'Курси валют НБУ'
+  menu_name: main
+  route_name: nbumodule.routing
+  weight: 100
