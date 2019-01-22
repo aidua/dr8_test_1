@@ -1,12 +1,12 @@
 <?php
 /**
  * @file
- * Contains \Drupal\hellomodule\Controller\HelloModuleController.
+ * Contains \Drupal\nbumodule\Controller\NbuModuleController.
  * ^ Пишеться по прикладу:
  *  - \Drupal - вказуэ що цей файл належить до ядра Drupal, тому що там ще є Symfony.
- *  - hellomodule - назва модуля.
+ *  - nbumodule - назва модуля.
  *  - Controller - тип файла. Папка src НЕ вказується завжди.
- *  - HelloModuleController - назва нашого класу.
+ *  - NbuModuleController - назва нашого класу.
  */
 
 /**
@@ -27,10 +27,10 @@ class NbuModuleController extends ControllerBase {
 
     public function nbuModule() {
         $output = array();
-        $output['#title'] = 'HelloModule page title';
-        $output['#markup'] = 'Hello World Module!';
+        $output['#title'] = 'NBU Module page title';
+        $output['#markup'] = 'NBU Hello World Module!';
         $output['#theme'] = 'nbumodule_template';
-        $output['#test_var'] = 'Test Value from function CONTENT';
+        $output['#test_var'] = 'Test Value from NBU function CONTENT';
 
 
 

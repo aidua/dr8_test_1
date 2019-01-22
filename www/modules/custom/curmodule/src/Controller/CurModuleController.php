@@ -1,12 +1,12 @@
 <?php
 /**
  * @file
- * Contains \Drupal\hellomodule\Controller\HelloModuleController.
+ * Contains \Drupal\curmodule\Controller\CurModuleController.
  * ^ Пишеться по прикладу:
  *  - \Drupal - вказуэ що цей файл належить до ядра Drupal, тому що там ще є Symfony.
- *  - hellomodule - назва модуля.
+ *  - curmodule - назва модуля.
  *  - Controller - тип файла. Папка src НЕ вказується завжди.
- *  - HelloModuleController - назва нашого класу.
+ *  - CurModuleController - назва нашого класу.
  */
 
 /**
@@ -30,11 +30,11 @@ class CurModuleController extends ControllerBase {
      * В Drupal 8 дуже багато будується на renderable arrays и при поверненні даною функцією
      * вмісту сторінки, ми також повинні вернути масив, який спокійно пройде через drupal_render().
      */
-    public function helloModule() {
+    public function curModule() {
         $output = array();
-        $output['#title'] = 'HelloModule page title';
-        $output['#markup'] = 'Hello World Module!';
-        $output['#theme'] = 'hellomodule_template';
+        $output['#title'] = 'CurmoduleModule page title';
+        $output['#markup'] = 'CurmoduleModule World Module!';
+        $output['#theme'] = 'curmodule_template';
         $output['#test_var'] = 'Test Value from function CONTENT';
         return $output;
     }
@@ -42,7 +42,7 @@ class CurModuleController extends ControllerBase {
     public function content() {
         return [
             '#theme' => 'curmodule_template',
-            '#test_var' => $this->t('Test Value from function CONTENT'),
+            '#test_var' => $this->t('Test Value from CurmoduleModule function CONTENT'),
         ];
     }
 }

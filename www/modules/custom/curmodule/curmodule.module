@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Component\Serialization\Json;
+
 /**
  * Implements hook_theme().
  */
@@ -12,4 +14,78 @@ function curmodule_theme() {
             'template' => 'curmodule_template', // Шлях до шаблону без .html.twig, в якому і будуть доступні змінні, що вказані вище
         ],
     ];
+}
+
+/**
+ * Implements hook_cron().
+ */
+function curmodule_cron() {
+
+//    //$uri = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
+    $uri = "http://drupal8.ua/exchange.json";
+    try {
+        $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
+        $currency_data = (string) $response->getBody();
+        if (empty($currency_data)) {
+            $currency_data = NULL;
+        } else {
+            $currency_data = Json::decode($currency_data);
+
+            foreach ($currency_data as $currency) {
+                // Шукаємо поточну валюту в таблиці nbu_table_info по її коду kod1
+                // (результат false або kod1 якщо знайдено)
+                $query = \Drupal::database()->select('nbu_table_info', 'info');
+                $query->addField('info', 'kod1');
+                $query->condition('kod1', $currency['r030']);
+                $query_result = $query->execute()->fetchField();
+                //return $mail;
+
+                // Якщо дана валюта відсютня в таблиці, то добавляємо її в таблицю nbu_table_info
+                if (!$query_result) {
+                    $query = \Drupal::database()->insert('nbu_table_info');
+                    $query->fields([
+                        'kod1' => $currency['r030'],
+                        'kod2' => $currency['cc'],
+                        'name' => $currency['txt'],
+                        'active' => 1,
+                    ]);
+                    $query->execute();
+                }
+
+                // Вставка обмінного курсу поточної валюти в таблицю nbu_table_data БД
+                $query = \Drupal::database()->insert('nbu_table_data');
+                $query->fields([
+                    'id_inf' => $currency['r030'],
+                    'exchange' => $currency['rate'],
+                    'date' => $currency['exchangedate'],
+                    //'date' => date("d.m.Y"),
+                ]);
+                $query->execute();
+            }
+        }
+    }
+    catch (Exception $e) {
+        $currency_data = $e->getMessage();
+    };
+
+
+
+    // Вставка даних в таблицю nbu_table_data БД
+    //$query = \Drupal::database()->insert('nbu_table_data');
+    //$query->fields([
+    //    'id_inf' => 0,
+    //    'exchange' => $currency['r030'],
+    //    'date' => date("d.m.Y"),
+    //]);
+    //$query->execute();
+
+//    // Вставка даних в таблицю nbu_table_data БД
+//    $query = \Drupal::database()->insert('nbu_table_data');
+//    $query->fields([
+//        'id_inf' => 0,
+//        'exchange' => 22.444444,
+//        'date' => date("d.m.Y"),
+//    ]);
+//    $query->execute();
+
 }
