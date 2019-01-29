@@ -27,7 +27,7 @@ class NbuModuleController extends ControllerBase {
 
     public function nbuModule() {
         $output = array();
-        $output['#title'] = 'NBU Module page title';
+        $output['#title'] = 'Офіційний курс валют НБУ';
         $output['#markup'] = 'NBU Hello World Module!';
         $output['#theme'] = 'nbumodule_template';
         $output['#test_var'] = 'Test Value from NBU function CONTENT';

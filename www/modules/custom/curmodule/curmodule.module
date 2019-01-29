@@ -6,12 +6,20 @@ use Drupal\Component\Serialization\Json;
  * Implements hook_theme().
  */
 function curmodule_theme() {
+
     return [
-        'curmodule_template' => [  // Назва теми
+        'curmodule_template_firstpage' => [  // Назва теми
             'variables' => [ // Масив назви змінних
                 'data' => NULL,
             ],
-            'template' => 'curmodule_template', // Шлях до шаблону без .html.twig, в якому і будуть доступні змінні, що вказані вище
+            'template' => 'first_curmodule_template', // Шлях до шаблону без .html.twig, в якому і будуть доступні змінні, що вказані вище
+        ],
+        'curmodule_template_pages' => [  // Назва теми
+            'variables' => [ // Масив назви змінних
+                //'data' => $query_result,
+                'pages_name' => NULL,
+            ],
+            'template' => 'pages_curmodule_template', // Шлях до шаблону без .html.twig, в якому і будуть доступні змінні, що вказані вище
         ],
     ];
 }
@@ -38,7 +46,6 @@ function curmodule_cron() {
                 $query->addField('info', 'kod1');
                 $query->condition('kod1', $currency['r030']);
                 $query_result = $query->execute()->fetchField();
-                //return $mail;
 
                 // Якщо дана валюта відсютня в таблиці, то добавляємо її в таблицю nbu_table_info
                 if (!$query_result) {

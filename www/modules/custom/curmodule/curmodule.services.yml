@@ -9,3 +9,9 @@ services:
     # Детальніше пояснення: https://www.drupal.org/node/2239393.
     tags:
       - { name: backend_overridable }
+
+  # Назва сервісу.
+  curmodule.path_processor:
+    class: Drupal\curmodule\PathProcessor\CurmodulePathProcessor
+    tags:
+      - { name: path_processor_inbound, priority: 250 }

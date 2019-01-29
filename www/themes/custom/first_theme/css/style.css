@@ -1,4 +1,6 @@
-
+H1 {
+    padding: 15px 0 25px;
+}
 .maincontainer {
     background-color: #c1d4df;
 }
@@ -11,6 +13,9 @@
 .currencytbl .row > div {
     padding-top: 3px;
     padding-bottom: 3px;
+}
+.currencytbl .row > div.currency {
+    padding-bottom: 20px;
 }
 .left-sidebar {
     background-color: #e0eaef;
