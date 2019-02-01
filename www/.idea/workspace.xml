@@ -26,11 +26,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="curmodule.module" pinned="false" current-in-tab="true">
+      <file leaf-file-name="curmodule.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/custom/curmodule/curmodule.module">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/html.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/page.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page--front.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/page--front.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -61,33 +88,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="6" selection-start-line="6" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-title.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/page-title.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pages_curmodule_template.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/custom/curmodule/templates/pages_curmodule_template.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-189">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="first_curmodule_template.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/custom/curmodule/templates/first_curmodule_template.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" selection-start-line="2" selection-end-line="11" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -132,7 +132,6 @@
         <option value="$PROJECT_DIR$/themes/custom/first_theme/theme-settings.php" />
         <option value="$PROJECT_DIR$/themes/custom/first_theme/config/install/first_theme.settings.yml" />
         <option value="$PROJECT_DIR$/themes/custom/first_theme/first_theme.theme" />
-        <option value="$PROJECT_DIR$/themes/custom/first_theme/templates/page--front.html.twig" />
         <option value="$PROJECT_DIR$/modules/custom/hellomodule/hellomodule.links.menu.yml" />
         <option value="$PROJECT_DIR$/modules/custom/hellomodule/templates/hellomodule.html.twig" />
         <option value="$PROJECT_DIR$/modules/custom/hellomodule/.module" />
@@ -168,6 +167,7 @@
         <option value="$PROJECT_DIR$/modules/custom/curmodule/curmodule.libraries.yml" />
         <option value="$PROJECT_DIR$/modules/custom/curmodule/config/install/curmodule.settings.yml" />
         <option value="$PROJECT_DIR$/modules/custom/curmodule/curmodule.module" />
+        <option value="$PROJECT_DIR$/themes/custom/first_theme/templates/page--front.html.twig" />
       </list>
     </option>
   </component>
@@ -426,12 +426,12 @@
       <updated>1546618698513</updated>
       <workItem from="1546618701804" duration="25714000" />
       <workItem from="1547396482984" duration="67509000" />
-      <workItem from="1548496685315" duration="61393000" />
+      <workItem from="1548496685315" duration="62019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154616000" />
+    <option name="totallyTimeSpent" value="155242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -693,27 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/html.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/page.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/page--front.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/theme-settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -811,6 +790,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/html.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/page.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/custom/first_theme/templates/page--front.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>

@@ -15,10 +15,7 @@
     {% endif %}
     <div class="col-md-{{ page.left_sidebar ? '6' : '12' }} content">
         <h1{{ attributes }}>{{ my_text }}</h1>
-        {{ kint() }}
-        <pre>
-            {{ dump(_context|keys) }}
-        </pre>
         {{ page.content }}
+        {{ kint() }}
     </div>
 {% endblock %}
