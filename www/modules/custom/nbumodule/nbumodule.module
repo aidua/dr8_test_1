@@ -7,8 +7,8 @@ use Drupal\Component\Serialization\Json;
  */
 function nbumodule_theme() {
 
-    //$uri = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
-    $uri = "http://drupal8.ua/exchange.json";
+    $uri = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
+    //$uri = "http://drupal8.ua/exchange.json";
     try {
         $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
         $nbu_data = (string) $response->getBody();
