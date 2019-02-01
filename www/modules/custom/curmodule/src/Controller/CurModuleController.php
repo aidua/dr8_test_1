@@ -47,14 +47,35 @@ class CurModuleController extends ControllerBase {
     }
 
     public function pagesCurModule($pages_name) {
+
+        // З таблиці nbu_table_info вибираємо ID валюти $pages_name
+        $query = \Drupal::database()->select('nbu_table_info', 'info');
+        $query->addField('info', 'kod1');
+        $query->condition('info.kod2', $pages_name);
+        $query_result_id = $query->execute()->fetchField();
+
+        // З таблиці nbu_table_data вибираємо всі активні валюти
+        $query = \Drupal::database()->select('nbu_table_data', 'data');
+        $query->fields('data', ['date', 'exchange']);
+        $query->condition('data.id_inf', $query_result_id);
+        $query_result = $query->execute()->fetchAll();
+
         $output = array();
         $output['#title'] = $this->t('Детальні курси @pages_name', array('@pages_name' => $pages_name));
-        //$output['#markup'] = 'pagesCurModule World Module!';
         $output['#theme'] = 'curmodule_template_pages';
+        $output['#data'] = $query_result;
+
+        foreach ($query_result as &$day_data) {
+            //var_dump($day_data);
+            //var_dump(strtotime($day_data->date) * 1000); echo '<br>';
+            $day_data->date = strtotime($day_data->date) * 1000;
+        }
+
+
+
         $output['#pages_name'] = $pages_name;
         return $output;
     }
-
 
     public function content() {
         return [
