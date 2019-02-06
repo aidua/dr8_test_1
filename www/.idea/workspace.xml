@@ -93,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/modules/custom/nbumodule/nbumodule.module">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="441">
-              <caret line="21" column="61" lean-forward="true" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -419,15 +419,15 @@
       <updated>1546618698513</updated>
       <workItem from="1546618701804" duration="25714000" />
       <workItem from="1547396482984" duration="67509000" />
-      <workItem from="1548496685315" duration="63744000" />
+      <workItem from="1548496685315" duration="64342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156967000" />
+    <option name="totallyTimeSpent" value="157565000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15724947" />
@@ -799,7 +799,7 @@
     <entry file="file://$PROJECT_DIR$/modules/custom/nbumodule/nbumodule.module">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
-          <caret line="21" column="61" lean-forward="true" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
         </state>
       </provider>
     </entry>
