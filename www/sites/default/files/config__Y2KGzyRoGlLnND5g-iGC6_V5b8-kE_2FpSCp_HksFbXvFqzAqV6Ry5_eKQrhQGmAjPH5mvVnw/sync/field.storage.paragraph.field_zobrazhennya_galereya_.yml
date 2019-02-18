@@ -1,0 +1,30 @@
+uuid: 49ddbbac-fe86-45c8-aaa1-230dba4ffdfc
+langcode: uk
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - paragraphs
+id: paragraph.field_zobrazhennya_galereya_
+field_name: field_zobrazhennya_galereya_
+entity_type: paragraph
+type: image
+settings:
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

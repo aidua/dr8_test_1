@@ -22,7 +22,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.6.0",
-        "drush/drush": "^9.0.0",
+        "drush/drush": "^8.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
@@ -65,11 +65,11 @@
             "drupal/core": "-p2"
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "www/core": ["type:drupal-core"],
+            "www/libraries/{$name}": ["type:drupal-library"],
+            "www/modules/contrib/{$name}": ["type:drupal-module"],
+            "www/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "www/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "drupal-scaffold": {
