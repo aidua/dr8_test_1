@@ -137,6 +137,7 @@ class MediaLibraryWidget extends WidgetBase implements ContainerFactoryPluginInt
       '#attached' => [
         'library' => ['media_library/widget'],
       ],
+      '#element_validate' => [[static::class, 'validateElement']],
     ];
 
     $element['selection'] = [
@@ -306,7 +307,8 @@ class MediaLibraryWidget extends WidgetBase implements ContainerFactoryPluginInt
       '#validate' => [[static::class, 'validateItems']],
       '#submit' => [[static::class, 'updateItems']],
       // Prevent errors in other widgets from preventing updates.
-      '#limit_validation_errors' => $limit_validation_errors,
+      // Exclude other validations in case there is no data yet.
+      '#limit_validation_errors' => !empty($referenced_entities) ? $limit_validation_errors : [],
     ];
 
     return $element;
@@ -389,6 +391,47 @@ class MediaLibraryWidget extends WidgetBase implements ContainerFactoryPluginInt
     }
 
     $form_state->setRebuild();
+  }
+
+  /**
+   * Validation checks on the element level.
+   *
+   * @param $element
+   *  The form element.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *  The form state.
+   * @param array $form
+   *  The form array.
+   */
+  public static function validateElement($element, FormStateInterface $form_state, array $form) {
+    $media = static::getNewMediaItems($element, $form_state);
+    // Mark the field as required if there is no existing or new media
+    // and this does not concern a remove call.
+    if (empty($media)
+      && !isset($element['selection'][0])
+      && $element['#required'] === TRUE
+      && !in_array([static::class, 'removeItem'], $form_state->getSubmitHandlers())) {
+      $form_state->setError($element, \Drupal::translation()->translate('Please select an item from the media library.'));
+
+      return;
+    }
+
+    if (!in_array([static::class, 'removeItem'], $form_state->getSubmitHandlers())) {
+      $field_state = static::getFieldState($element, $form_state);
+
+      // Ensure 1 target_id exists to avoid future validation errors.
+      if (count($field_state['items']) === 0) {
+        foreach ($media as $media_item) {
+          // Any ID can be passed to the widget, so we have to check access.
+          if ($media_item->access('view')) {
+            $field_state['items'][] = [
+              'target_id' => $media_item->id(),
+            ];
+          }
+        }
+      }
+      static::setFieldState($element, $form_state, $field_state);
+    }
   }
 
   /**

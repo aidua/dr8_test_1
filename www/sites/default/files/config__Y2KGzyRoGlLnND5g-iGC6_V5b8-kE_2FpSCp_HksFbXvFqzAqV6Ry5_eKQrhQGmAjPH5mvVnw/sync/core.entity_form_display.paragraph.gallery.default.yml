@@ -5,23 +5,19 @@ dependencies:
   config:
     - field.field.paragraph.gallery.field_images
     - field.field.paragraph.gallery.field_title
-    - field.field.paragraph.gallery.field_zobrazhennya_galereya_
-    - image.style.thumbnail
     - paragraphs.paragraphs_type.gallery
   module:
-    - image
+    - media_library
 id: paragraph.gallery.default
 targetEntityType: paragraph
 bundle: gallery
 mode: default
 content:
   field_images:
-    weight: 2
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+    type: media_library_widget
+    weight: 1
+    settings: {  }
     third_party_settings: {  }
-    type: image_image
     region: content
   field_title:
     weight: 0
@@ -30,14 +26,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_zobrazhennya_galereya_:
-    weight: 1
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
     region: content
 hidden:
   created: true
