@@ -3,11 +3,11 @@
 /drush/contrib/
 /scripts/
 /vendor/
-#/www/core/
-#/www/modules/contrib/
-#/www/themes/contrib/
-#/www/profiles/contrib/
-#/www/libraries/
+/www/core/
+/www/modules/contrib/
+/www/themes/contrib/
+/www/profiles/contrib/
+/www/libraries/
 
 # Ignore sensitive information
 /www/sites/*/settings.php
