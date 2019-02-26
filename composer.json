@@ -41,7 +41,7 @@
     },
     "autoload": {
         "classmap": [
-            "scripts/composer/ScriptHandler.php"
+            "./scripts/composer/ScriptHandler.php"
         ],
         "files": ["load.environment.php"]
     },
@@ -77,6 +77,11 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
-        }
+        },
+        "patches": {
+            "drupal/address": {
+                "Drupal Addess fix default syncing": "https://www.drupal.org/files/issues/address_syncing.patch"     
+            }
+        }		
     }
 }
